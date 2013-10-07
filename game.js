@@ -9,8 +9,6 @@ $(document).ready(function(){
 
 	function start_game()
 	{
-                var img = document.getElementById("canvas1");
-                ctx.drawImage(img, 0, 0);
 
 		// Main move loop.
 		if(typeof game_loop != "undefined") clearInterval(game_loop);
@@ -23,25 +21,22 @@ $(document).ready(function(){
 
                 var offset = 100;               
 
-                // Clear screen.
-                ctx.fillStyle = "white";
-	        ctx.fillRect(0,0+offset, 115, 30+offset);
-                
                 // Count.               
                 fun++;
-                if (fun == 20) {
+                if (fun % 5 == 0) {
                   create_event(fun);
                 } 
-                run_events(fun);
+                redraw_canvas();
+                run_events(fun, coordX, coordY);
                           
                 // Display.
-                var fun_text = "FUN: " + fun;
+                /* var fun_text = "FUN: " + fun;
                 ctx.fillStyle = "blue";
 	        ctx.fillText(fun_text, 50, 50+offset);
                 fun_text = "ClickX: " + coordX;
 	        ctx.fillText(fun_text, 50, 50+offset+10);
                 fun_text = "ClickY: " + coordY;
-	        ctx.fillText(fun_text, 50, 50+offset+20);
+	        ctx.fillText(fun_text, 50, 50+offset+20); */
 
 	}
 
