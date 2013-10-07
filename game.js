@@ -29,7 +29,11 @@ $(document).ready(function(){
                 
                 // Count.               
                 fun++;
-          
+                if (fun == 20) {
+                  create_event(fun);
+                } 
+                run_events(fun);
+                          
                 // Display.
                 var fun_text = "FUN: " + fun;
                 ctx.fillStyle = "blue";
