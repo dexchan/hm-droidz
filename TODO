@@ -28,23 +28,25 @@
 [] ... ... Dismiss Dialogs
 
 [] Back End Programming
-[] ... Game Stats (budget etc)
+[]  ... Game Stats (budget etc)
 [x] ... ... Basic Setup. 
-[] ... Robots
-[] ... ... Have robots
-[] ... ... Buy Robots
-[] ... ... Deploy Robots
-[] ... ... ... How many robots?
-[] ... ... ... How are events affected?
-[] ... ... Kill robots?
-[x] ... Events
+[]  ... Robots
+[]  ... ... Have robots
+[]  ... ... Buy Robots
+[]  ... ... Deploy Robots
+[]  ... ... ... How many robots?
+[]  ... ... ... How are events affected?
+[]  ... ... Kill robots?
+[x] ... Events Interface
 [x] ... ... Preconditions (counter, robot # etc)
 [x] ... ... Success
 [x] ... ... Failure
 [x] ... ... Duration
-[] ... ... Better Storage
-[] ... Informants (todo)
-[] ... Endgame Conditions, events etc.
+[]  ... Events Engine
+[x] ... ... Basic functional test engine
+[]  ... ... Something efficient
+[]  ... Informants (todo)
+[]  ... Endgame (todo)
 
 [] Balance & Fun Stuff (We are not even there yet)
 [] ... Write this part.

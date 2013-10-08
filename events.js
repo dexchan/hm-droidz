@@ -7,7 +7,6 @@ var max_x = 800;
 var min_y = 30;
 var max_y = 400;
 
-
 /** BASE EVENT **/
 // Returns a new and most generic event.
 function create_base_event(counter) {
