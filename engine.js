@@ -1,27 +1,54 @@
-// TODO: We should make this more efficient through either callbacks or at least
-// better use of data structures.
+// TODO: We get nothing from storing events in an array. Use a hashmap or /something/.
 
 // Keeps track of active events.
 var event_array = [];
 
+/**** Event Control Functions ****/
+
 // Maybe generates events based on game state.
+// Increments relevant counters.
+// Add creation functions to here.
 function maybe_generate_events(game_state) {
   var counter = game_state.counter;
-  if (game_state.counter % 5) {
+  if (counter % 5) {
      event_array.push(create_base_event(game_state.counter));
+     game_state.events++;
+  } else if ((counter % 7) && (counter > 30)) {
+     event_array.push(create_incremental_event(game_state.counter));
+     game_state.events++;
   }
 }
 
-// Loops through the events to either click them or end them.
-// TODO: We should consider separating on-click actions from the
-// overall event loop and then simplifying the event loop. 
+// Clicks the event.
+// Add on-click functions to here.
+function click_event(event) {
+  var robot = {level: 2, dead: false};
+  if (event.type == "inc") {
+    click_incremental_event(event, robot);
+  } else {
+    click_base_event(event, robot);
+  }
+}
+
+// Progresses the event, by bringing down the timer.
+// Add progression functions here.
+function progress_event(event) {
+  if (event.type == "inc") {
+    progress_incremental_event(event);
+  } else {
+    progress_base_event(event);
+  }
+}
+
+/** Event control functions ***/
+
+// Loops through the events to progress them.
 // TODO: Remove events from this loop. 
-function run_events(game_state, coords) {
+function run_events(game_state) {
   for (var i = 0; i < event_array.length; i++) {
      var event = event_array[i];
-     event.duration--; // TODO: This should be replaced by Progress Event.
+     progress_event(event);
      if (event.duration > 0) {
-       click_event(event, coords.x, coords.y);
        draw_event(event);
      }
   }
@@ -30,15 +57,16 @@ function run_events(game_state, coords) {
 // The ~radius to center of event that counts as clicking the event.
 var event_dimensions = 25;
 
-// Sets the event.click to true if the click coordinates are right.
-// TODO: Have actual event effects.
-// (Luckily, clicking the event has ~similar effects);
-function click_event(event, x, y) {
-  var yd = y - event.y;
-  var xd = x - event.x;
-  if ((yd < 25) && (xd < 25)) {
-    if ((yd > -25) && (xd > -25)) {
-      event.click = true;
+// On a mouse click, check if any of the events have been clicked.
+function check_event_clicks(click) {
+  for (var i = 0; i < event_array.length; i++) {
+    var event = event_array[i];
+    var yd = y - event.y;
+    var xd = x - event.x;
+    if ((yd < event_dimensions) && (xd < event_dimensions)) {
+     if ((yd > (0-event_dimensions)) && (xd > (0-event_dimensions))) {
+      click_event(event);
+     }
     }
   }
 }

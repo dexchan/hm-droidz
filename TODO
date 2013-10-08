@@ -29,19 +29,23 @@
 
 [] Back End Programming
 [] ... Game Stats (budget etc)
-[] ... Robot Types
-[] ... Robot Deploys
-[] ... ... How many robots?
-[] ... ... How are events affected?
-[] ... ... How do robots die?
+[x] ... ... Basic Setup. 
+[] ... Robots
+[] ... ... Have robots
+[] ... ... Buy Robots
+[] ... ... Deploy Robots
+[] ... ... ... How many robots?
+[] ... ... ... How are events affected?
+[] ... ... Kill robots?
 [] ... Events
-[] ... ... Preconditions (counter, robot # etc)
-[] ... ... Consequences (of success, failure, etc)
-[] ... ... Duration & dealing with
-[] ... Launching events
-[] ... ... Launching events with something more efficient
+[x] ... ... Preconditions (counter, robot # etc)
+[] ... ... Success
+[] ... ... Failure
+[x] ... ... Duration
+[] ... ... Better Storage
+[] ... Informants (todo)
 [] ... Endgame Conditions, events etc.
 
-[] Balance & Fun Stuff
+[] Balance & Fun Stuff (We are not even there yet)
 [] ... Write this part.
 [] ... A coherent README.
