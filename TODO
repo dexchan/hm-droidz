@@ -1,0 +1,47 @@
+[] Graphics
+[] ... Layout
+[] ... ... CSS resizing & stuff
+[] ... ... Victorian Pocketwatch Timekeep
+[] ... ... Status bars for money, etc.
+[] ... ... Upgrades & Overall Changes?
+[] ... Event alerts
+[] ... ... Event displays & Information
+[] ... ... Event progress
+[] ... ... Event success
+[] ... ... Event failure
+[] ... Robot Store
+[] ... Robot Deploy
+[] ... ... Robot Deploy with floating menus?
+[] ... Characters
+[] ... ... Informants & Information
+[] ... ... Police Chief & Information (i,i tutorial)
+
+[] Front End Programming
+[] ... Store
+[] ... ... Click To buy!
+[] ... Deploy
+[] ... ... Select Robot
+[] ... ... Send Robot
+[] ... ... Keep track of robot #s sent?
+[] ... ... Give Instructions (final phase)
+[] ... Dialogs
+[] ... ... Dismiss Dialogs
+
+[] Back End Programming
+[] ... Game Stats (budget etc)
+[] ... Robot Types
+[] ... Robot Deploys
+[] ... ... How many robots?
+[] ... ... How are events affected?
+[] ... ... How do robots die?
+[] ... Events
+[] ... ... Preconditions (counter, robot # etc)
+[] ... ... Consequences (of success, failure, etc)
+[] ... ... Duration & dealing with
+[] ... Launching events
+[] ... ... Launching events with something more efficient
+[] ... Endgame Conditions, events etc.
+
+[] Balance & Fun Stuff
+[] ... Write this part.
+[] ... A coherent README.
