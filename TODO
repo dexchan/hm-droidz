@@ -37,10 +37,10 @@
 [] ... ... ... How many robots?
 [] ... ... ... How are events affected?
 [] ... ... Kill robots?
-[] ... Events
+[x] ... Events
 [x] ... ... Preconditions (counter, robot # etc)
-[] ... ... Success
-[] ... ... Failure
+[x] ... ... Success
+[x] ... ... Failure
 [x] ... ... Duration
 [] ... ... Better Storage
 [] ... Informants (todo)

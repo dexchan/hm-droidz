@@ -40,17 +40,31 @@ function progress_event(event) {
   }
 }
 
+// Ends the event, either well or not.
+function end_event(event, game_state) {
+  end_base_event(event, game_state);
+}
+
 /** Event control functions ***/
 
-// Loops through the events to progress them.
-// TODO: Remove events from this loop. 
+// Loops through the events to progress & end them.
+// We might want this to be more efficient.
 function run_events(game_state) {
+  var done = [];
   for (var i = 0; i < event_array.length; i++) {
      var event = event_array[i];
      progress_event(event);
      if (event.duration > 0) {
        draw_event(event);
+     } else {
+       done.push(i);
      }
+  }
+  for (var i = 0; i< done.length; i++) {
+     var d = done[i] - i;
+     var event = event_array[d];
+     end_event(event, game_state);
+     event_array.splice(d, 1);
   }
 }
 

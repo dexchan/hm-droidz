@@ -18,6 +18,7 @@ function create_base_event(counter) {
            y: min_y + y_bonus,
            duration: 50,
            difficulty: 1,
+           reward: 5,
            type: "base",
            diffuse: false};
 }
@@ -28,8 +29,9 @@ function create_base_event(counter) {
 function click_base_event(event, robot) {
   if (robot.level > event.difficulty) {
     event.diffuse = true;
+    event.duration = 10; // Duration of a diffused event is how long it takes to fix.
   } else {
-    robot.dead = true;
+    robot.dead = true; // Might be too harsh!
   }   
 }
 
@@ -37,6 +39,16 @@ function click_base_event(event, robot) {
 function progress_base_event(event) {
   event.duration--;
 }
+
+// Ends the event.
+function end_base_event(event, game_state) {
+  if (event.diffuse) {
+    game_state.budget = game_state.budget + event.reward;
+  } else {
+    game_state.budget = game_state.budget - event.reward;
+  }    
+}
+
 /***********************************/
 
 /* Incremental Event: Gets worse. */
