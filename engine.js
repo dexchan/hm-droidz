@@ -36,8 +36,8 @@ var event_dimensions = 25;
 function check_event_clicks(click) {
   for (var i = 0; i < event_array.length; i++) {
     var event = event_array[i];
-    var yd = y - event.y;
-    var xd = x - event.x;
+    var yd = click.y - event.y;
+    var xd = click.x - event.x;
     if ((yd < event_dimensions) && (xd < event_dimensions)) {
      if ((yd > (0-event_dimensions)) && (xd > (0-event_dimensions))) {
       click_event(event);

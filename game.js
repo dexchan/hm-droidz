@@ -65,7 +65,7 @@ $(document).ready(function(){
   $(document).click(function(e){
         click.x = e.clientX;
         click.y = e.clientY;
-        var robot = get_robot_stats(selected.robot);
+        var robot = get_robot_stats(selected_robot);
         game_state.budget = game_state.budget - robot.cost;
         var send_robot = {level : robot.level, dead: false};
         check_event_clicks(click, send_robot);
